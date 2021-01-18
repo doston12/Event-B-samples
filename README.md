@@ -1,7 +1,7 @@
 # Event-B-samples
 Event sample projects
 
-
+Train 001 - SUICA Card in Tokyo Metro line
 What is SUICA?
 As contactless cash cards (IC Cards) increasingly become the norm, many people will opt to get a hassle-free card rather than buy a ticket for each ride. The "SUICA Card" is often at the top of search results for Tokyo transit cards. "SUICA" is an endearing Japanese pun on the word “watermelon” and “transit card.”  
 The SUICA Card is sold by the Japan Rail (JR) East Company and can be used for all JR East trains, the Tokyo Metro, Toei Subway, buses, and monorail lines. The card can also be used for parts of Sendai, Niigata, Hokkaido, Tokaido, West Japan and Kyushu. The SUICA only works if your entry and exit point accepts SUICA cards, which is the case for all stations in Tokyo. This is our case; we are considering a solution for only within Tokyo metro line. 
@@ -22,7 +22,6 @@ Machines:
 Simple check-in and check-out machines in the same metro line. One entry and one leaving station.  1 2 3 4 5 -  2 4
 Check-in and check-out machines with various metro lines – exchange lines. 
 Include different types of people(children and adults) to complex metro travel(line exchange)
-
 
 
 Contexts:
