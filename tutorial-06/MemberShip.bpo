@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="MEMBER" org.eventb.core.type="ℙ(MEMBER)"/>
+<org.eventb.core.poPredicate name="MEMBES" org.eventb.core.predicate="finite(MEMBER)" org.eventb.core.source="/tutorial-06/MembersContext.buc|org.eventb.core.contextFile#MembersContext|org.eventb.core.axiom#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="coffeeprice" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="members" org.eventb.core.type="ℙ(MEMBER)"/>
+<org.eventb.core.poIdentifier name="piggybank" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="accounts" org.eventb.core.type="ℙ(MEMBER×ℤ)"/>
+<org.eventb.core.poPredicate name="coffeepricf" org.eventb.core.predicate="piggybank∈ℕ" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.invariant#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="0∈ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(MEMBER×ℤ))∈(∅ ⦂ ℙ(MEMBER)) → ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#INITIALISATION\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContexy">
+<org.eventb.core.poPredicate name="'" org.eventb.core.predicate="coffeeprice'∈ℕ1" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#'|org.eventb.core.action#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="coffeeprice'∈ℕ1" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#INITIALISATION\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/act4/FIS" org.eventb.core.accurate="true" org.eventb.core.poDesc="Feasibility of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContexy"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="ℕ1≠(∅ ⦂ ℙ(ℤ))" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#'|org.eventb.core.action#("/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContexy"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContexy" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="members'" org.eventb.core.type="ℙ(MEMBER)"/>
+<org.eventb.core.poIdentifier name="coffeeprice'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="accounts'" org.eventb.core.type="ℙ(MEMBER×ℤ)"/>
+<org.eventb.core.poIdentifier name="piggybank'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContexy" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContexy" org.eventb.core.poStamp="0"/>
+<org.eventb.core.poSequent name="SetPrice/inv4/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContexz"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="amount∈ℕ1" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#2"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#1"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#SetPrice\/inv4\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD3"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContexz" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="amount" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="coffeeprice'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContexz" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContexz" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="amount∈ℕ1" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#2|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="NewMember/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex{"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="accounts{member ↦ 0}∈members∪{member} → ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#3"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#NewMember\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContex{" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="MEMBER"/>
+<org.eventb.core.poIdentifier name="members'" org.eventb.core.type="ℙ(MEMBER)"/>
+<org.eventb.core.poIdentifier name="accounts'" org.eventb.core.type="ℙ(MEMBER×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContex{" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContex{" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="member∈MEMBER ∖ members" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#3|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="Contribute/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="piggybank+amount∈ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#*"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#Contribute\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Contribute/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="accounts{member ↦ accounts(member)+amount}∈members → ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#*"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#4"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#Contribute\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="Contribute/act2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex\|"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(accounts)∧accounts∈MEMBER ⇸ ℤ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#4|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#4|org.eventb.core.action#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex\|"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContex|" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="amount" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="MEMBER"/>
+<org.eventb.core.poIdentifier name="accounts'" org.eventb.core.type="ℙ(MEMBER×ℤ)"/>
+<org.eventb.core.poIdentifier name="piggybank'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContex|" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContex\|" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="amount∈ℕ1" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#*|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="member∈members" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#4|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="BuyCoffee/grd2/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTHYPMembersContex}'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(accounts)∧accounts∈MEMBER ⇸ ℤ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5|org.eventb.core.guard#)"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5|org.eventb.core.guard#)"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTHYPMembersContex}'"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="BuyCoffee/inv3/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="accounts{member ↦ accounts(member) − coffeeprice}∈members → ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poSelHint name="SEQHYT" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#BuyCoffee\/inv3\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="BuyCoffee/act1/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex}"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(accounts)∧accounts∈MEMBER ⇸ ℤ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5|org.eventb.core.action#*"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5|org.eventb.core.action#*"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex}"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContex}" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="MEMBER"/>
+<org.eventb.core.poIdentifier name="accounts'" org.eventb.core.type="ℙ(MEMBER×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPMembersContex}'" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContex}" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="member∈members" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContex}" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTHYPMembersContex}'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="accounts(member)≥coffeeprice" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#5|org.eventb.core.guard#)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="FeedBank/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContex~"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="piggybank+amount∈ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#*"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#6"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#FeedBank\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContex~" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="amount" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="piggybank'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContex~" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContex~" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="amount∈ℕ1" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#*|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="RobBank/inv1/INV" org.eventb.core.accurate="true" org.eventb.core.poDesc="Invariant  preservation" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTALLHYPMembersContey'"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="piggybank − amount∈ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#+"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.event#7"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poSequent#RobBank\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTMembersContey'" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="amount" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="piggybank'" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPMembersContey'" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#EVTIDENTMembersContey'" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="amount∈1 ‥ piggybank" org.eventb.core.source="/tutorial-06/CoffeeClub.bum|org.eventb.core.machineFile#CoffeeClub|org.eventb.core.event#+|org.eventb.core.guard#("/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/tutorial-06/MemberShip.bpo|org.eventb.core.poFile#MemberShip|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="piggybank∈ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#."/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="members⊆MEMBER" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#\/"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="accounts∈members → ℕ" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#0"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="coffeeprice∈ℕ1" org.eventb.core.source="/tutorial-06/MemberShip.bum|org.eventb.core.machineFile#MemberShip|org.eventb.core.invariant#1"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

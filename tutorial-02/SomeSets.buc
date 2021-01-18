@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase" version="3">
+<org.eventb.core.carrierSet name="'" org.eventb.core.identifier="PERSON"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="(" org.eventb.core.identifier="Male"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name=")" org.eventb.core.identifier="Female"/>
+<org.eventb.core.axiom name="*" org.eventb.core.label="axm1" org.eventb.core.predicate="Male ⊆ PERSON"/>
+<org.eventb.core.axiom name="+" org.eventb.core.label="axm2" org.eventb.core.predicate="Female ⊆ PERSON"/>
+<org.eventb.core.axiom name="," org.eventb.core.label="axm3" org.eventb.core.predicate="PERSON = Male ∪ Female"/>
+<org.eventb.core.axiom name="-" org.eventb.core.label="axm4" org.eventb.core.predicate="Male ∩ Female = ∅"/>
+<org.eventb.core.axiom name="3" org.eventb.core.label="axm7" org.eventb.core.predicate="Mothers ⊆ Female"/>
+<org.eventb.core.axiom name="4" org.eventb.core.label="axm8" org.eventb.core.predicate="Fathers ⊆ Male"/>
+<org.eventb.core.axiom name="5" org.eventb.core.label="axm9" org.eventb.core.predicate="Male = PERSON ∖ Female"/>
+<org.eventb.core.axiom name="/" org.eventb.core.label="axm6" org.eventb.core.predicate="Female = PERSON ∖ Male" org.eventb.core.theorem="true"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="0" org.eventb.core.identifier="Mothers"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="1" org.eventb.core.identifier="Fathers"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="2" org.eventb.core.identifier="Parents"/>
+<org.eventb.core.axiom name="6" org.eventb.core.label="axm10" org.eventb.core.predicate="Parents = Mothers ∪ Fathers"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="7" org.eventb.core.identifier="MotherOf"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="8" org.eventb.core.identifier="FatherOf"/>
+<org.eventb.core.constant de.prob.symbolic.symbolicAttribute="false" name="9" org.eventb.core.identifier="ParentOf"/>
+<org.eventb.core.axiom name=":" org.eventb.core.label="axm11" org.eventb.core.predicate="MotherOf = PERSON → Mothers"/>
+<org.eventb.core.axiom name=";" org.eventb.core.label="axm12" org.eventb.core.predicate="FatherOf = PERSON → Fathers"/>
+<org.eventb.core.axiom name="=" org.eventb.core.label="axm13" org.eventb.core.predicate="ParentOf = MotherOf ∪ FatherOf"/>
+<org.eventb.core.axiom name="&gt;" org.eventb.core.label="axm14" org.eventb.core.predicate="Female = PERSON ∖ Male" org.eventb.core.theorem="true"/>
+</org.eventb.core.contextFile>

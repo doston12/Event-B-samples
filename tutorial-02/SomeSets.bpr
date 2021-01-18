@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="axm6/THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="PERSON">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p3"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="Female" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.prIdent name="Male" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="Female⊆PERSON"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Female=PERSON ∖ Male"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="Male⊆PERSON"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="PERSON=Male∪Female"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="Male∩Female=(∅ ⦂ ℙ(PERSON))"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm14/THM" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0" org.eventb.core.prSets="PERSON">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p0"/>
+<org.eventb.core.prIdent name="Female" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.prIdent name="Male" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="Female=PERSON ∖ Male"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>

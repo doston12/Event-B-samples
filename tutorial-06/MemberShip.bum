@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="members ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="accounts ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="coffeeprice :∈ ℕ1" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.refinesMachine name="(" org.eventb.core.target="CoffeeClub"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="MembersContext"/>
+<org.eventb.core.variable name="*" org.eventb.core.identifier="piggybank"/>
+<org.eventb.core.variable name="+" org.eventb.core.identifier="members"/>
+<org.eventb.core.variable name="," org.eventb.core.identifier="accounts"/>
+<org.eventb.core.variable name="-" org.eventb.core.identifier="coffeeprice"/>
+<org.eventb.core.invariant name="." org.eventb.core.label="inv1" org.eventb.core.predicate="piggybank ∈ ℕ"/>
+<org.eventb.core.invariant name="/" org.eventb.core.label="inv2" org.eventb.core.predicate="members ⊆ MEMBER"/>
+<org.eventb.core.invariant name="0" org.eventb.core.label="inv3" org.eventb.core.predicate="accounts ∈ members → ℕ"/>
+<org.eventb.core.invariant name="1" org.eventb.core.label="inv4" org.eventb.core.predicate="coffeeprice ∈ ℕ1"/>
+<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="SetPrice">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="amount"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="amount ∈ ℕ1"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="coffeeprice ≔ amount" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="NewMember">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="member"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ MEMBER ∖ members"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="members ≔ members ∪ {member}" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="accounts(member) ≔ 0" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Contribute">
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="member"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="accounts(member) ≔ accounts(member) + amount" org.eventb.core.label="act2"/>
+<org.eventb.core.refinesEvent name="-" org.eventb.core.target="FeedBank"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="BuyCoffee">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="member"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="accounts(member) ≥ coffeeprice"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="accounts(member) ≔ accounts(member) − coffeeprice" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="FeedBank">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="FeedBank"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="RobBank">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="RobBank"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

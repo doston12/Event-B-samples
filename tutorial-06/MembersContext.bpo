@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="MEMBER" org.eventb.core.type="ℙ(MEMBER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/tutorial-06/MembersContext.bpo|org.eventb.core.poFile#MembersContext|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(MEMBER)" org.eventb.core.source="/tutorial-06/MembersContext.buc|org.eventb.core.contextFile#MembersContext|org.eventb.core.axiom#("/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

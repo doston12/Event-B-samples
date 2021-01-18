@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="PERSON" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="Mothers" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="Male" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="Female" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="FatherOf" org.eventb.core.type="ℙ(ℙ(PERSON×PERSON))"/>
+<org.eventb.core.poIdentifier name="Fathers" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="ParentOf" org.eventb.core.type="ℙ(ℙ(PERSON×PERSON))"/>
+<org.eventb.core.poIdentifier name="MotherOf" org.eventb.core.type="ℙ(ℙ(PERSON×PERSON))"/>
+<org.eventb.core.poIdentifier name="Parents" org.eventb.core.type="ℙ(PERSON)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm6/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#HYP-"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Female=PERSON ∖ Male" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#HYP-"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm14/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#HYP2"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="Female=PERSON ∖ Male" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#&gt;"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#&gt;"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#HYP2"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYP-" org.eventb.core.parentSet="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="Male⊆PERSON" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="Female⊆PERSON" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#+"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="PERSON=Male∪Female" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="Male∩Female=(∅ ⦂ ℙ(PERSON))" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#-"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="Mothers⊆Female" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="Fathers⊆Male" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#4"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="Male=PERSON ∖ Female" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#5"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYP2" org.eventb.core.parentSet="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#HYP-" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="Female=PERSON ∖ Male" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="Parents=Mothers∪Fathers" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#6"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="MotherOf=PERSON → Mothers" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#:"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="FatherOf=PERSON → Fathers" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#;"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="ParentOf=MotherOf∪FatherOf" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#="/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/tutorial-02/SomeSets.bpo|org.eventb.core.poFile#SomeSets|org.eventb.core.poPredicateSet#HYP2" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="Female=PERSON ∖ Male" org.eventb.core.source="/tutorial-02/SomeSets.buc|org.eventb.core.contextFile#SomeSets|org.eventb.core.axiom#&gt;"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>
