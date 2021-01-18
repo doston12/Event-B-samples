@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="63">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="40">
+<org.eventb.core.poIdentifier name="SUICA_CARD" org.eventb.core.type="ℙ(SUICA_CARD)"/>
+<org.eventb.core.poIdentifier name="PERSON" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="old_citizens" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="kids" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="normal_traveller" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poPredicate name="normal_travelles" org.eventb.core.predicate="finite(SUICA_CARD)" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="normal_travellet" org.eventb.core.predicate="finite(PERSON)" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="normal_travelleu" org.eventb.core.predicate="partition(PERSON,{students},{kids},{old_citizens},{normal_traveller})" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poIdentifier name="COMPANIES" org.eventb.core.type="ℙ(COMPANIES)"/>
+<org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+<org.eventb.core.poIdentifier name="deactivated" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="change_line_fee" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="JSR_EAST" org.eventb.core.type="COMPANIES"/>
+<org.eventb.core.poIdentifier name="insufficient" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="PRIVATE_LINE" org.eventb.core.type="COMPANIES"/>
+<org.eventb.core.poIdentifier name="active" org.eventb.core.type="STATES"/>
+<org.eventb.core.poPredicate name="normal_travellev" org.eventb.core.predicate="partition(STATES,{active},{insufficient},{deactivated})" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="normal_travellew" org.eventb.core.predicate="active≠deactivated" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="normal_travellex" org.eventb.core.predicate="partition(COMPANIES,{JSR_EAST,PRIVATE_LINE})" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#8"/>
+<org.eventb.core.poPredicate name="normal_travelley" org.eventb.core.predicate="JSR_EAST≠PRIVATE_LINE" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#9"/>
+<org.eventb.core.poPredicate name="normal_travellez" org.eventb.core.predicate="change_line_fee=20 ‥ 100" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#;"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="58">
+<org.eventb.core.poIdentifier name="balances" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+<org.eventb.core.poIdentifier name="members" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="passangers_type" org.eventb.core.type="ℙ(PERSON×PERSON)"/>
+<org.eventb.core.poIdentifier name="cards_state" org.eventb.core.type="ℙ(PERSON×STATES)"/>
+<org.eventb.core.poPredicate name="passangers_typf" org.eventb.core.predicate="members⊆PERSON" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#*"/>
+<org.eventb.core.poPredicate name="passangers_typg" org.eventb.core.predicate="balances∈members → ℕ" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#,"/>
+<org.eventb.core.poPredicate name="passangers_typh" org.eventb.core.predicate="passangers_type∈members → PERSON" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.invariant#4"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="INITIALISATION/inv1/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typf"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PERSON×PERSON))∈(∅ ⦂ ℙ(PERSON)) → PERSON" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#4"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#INITIALISATION\/inv1\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD0"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="INITIALISATION/inv2/INV" org.eventb.core.accurate="false" org.eventb.core.poDesc="Invariant  establishment" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typf"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="(∅ ⦂ ℙ(PERSON×STATES))∈(∅ ⦂ ℙ(PERSON)) → STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="ABSTRACT" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#'"/>
+<org.eventb.core.poSource name="SEQHYS" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#\/"/>
+<org.eventb.core.poSource name="SEQHYT" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#8"/>
+<org.eventb.core.poSelHint name="SEQHYU" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#INITIALISATION\/inv2\/INV|org.eventb.core.poPredicateSet#SEQHYP"/>
+<org.eventb.core.poSelHint name="SEQHYV" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP|org.eventb.core.poPredicate#PRD1"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTpassangers_typf" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="40">
+<org.eventb.core.poIdentifier name="cards_state'" org.eventb.core.type="ℙ(PERSON×STATES)"/>
+<org.eventb.core.poIdentifier name="balances'" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+<org.eventb.core.poIdentifier name="members'" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="passangers_type'" org.eventb.core.type="ℙ(PERSON×PERSON)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPpassangers_typf" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpassangers_typf" org.eventb.core.poStamp="40"/>
+<org.eventb.core.poSequent name="AddMoney/grd3/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typg)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(cards_state)∧cards_state∈PERSON ⇸ STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#1|org.eventb.core.guard#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#1|org.eventb.core.guard#,"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typg)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTpassangers_typg" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="61">
+<org.eventb.core.poIdentifier name="amount" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="balances'" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typg)" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpassangers_typg" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="amount∈ℕ1" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#1|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="member∈members" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#1|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPpassangers_typg" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typg)" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="cards_state(member)=active" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#1|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="DeductCommuteAmountAdult/grd5/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="62">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typh*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(cards_state)∧cards_state∈PERSON ⇸ STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#2|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#2|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typh*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTpassangers_typh" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="62">
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="balances'" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+<org.eventb.core.poIdentifier name="commutePrice" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="passanger_type" org.eventb.core.type="PERSON"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typh*" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpassangers_typh" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="member∈members" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#0|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="commutePrice∈ℕ1" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#0|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="passanger_type=normal_traveller" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#0|org.eventb.core.guard#."/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="balances(member)≥commutePrice" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#0|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPpassangers_typh" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typh*" org.eventb.core.poStamp="62">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="cards_state(member)=active" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#2|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="DeductCommuteAmountSpecialCard/grd5/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="63">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typi*"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(cards_state)∧cards_state∈PERSON ⇸ STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#5|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#5|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typi*"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTpassangers_typi" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="63">
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="balances'" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+<org.eventb.core.poIdentifier name="commute_price" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="passanger_type" org.eventb.core.type="PERSON"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typi*" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpassangers_typi" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="member∈members" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#1|org.eventb.core.guard#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="commute_price∈ℕ1" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#1|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="balances(member)≥commute_price ÷ 2" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#1|org.eventb.core.guard#+"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="passanger_type∈{kids,old_citizens,students}" org.eventb.core.source="/suica-train/M1.bum|org.eventb.core.machineFile#M1|org.eventb.core.event#1|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPpassangers_typi" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typi*" org.eventb.core.poStamp="63">
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="cards_state(member)=active" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#5|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="ChangeLineAdult/grd3/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typj("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(balances)∧balances∈PERSON ⇸ ℤ" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#,"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typj("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ChangeLineAdult/grd4/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typj)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(cards_state)∧cards_state∈PERSON ⇸ STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#."/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#."/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typj)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ChangeLineAdult/act1/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typj"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(balances)∧balances∈PERSON ⇸ ℤ" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.action#+"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typj"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ChangeLineAdult/balances/EQL" org.eventb.core.accurate="false" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typj"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="balances{member ↦ balances(member) − commute_price − change_fee}=balances" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.action#+"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#ChangeLineAdult\/balances\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTpassangers_typj" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="61">
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="balances'" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+<org.eventb.core.poIdentifier name="commute_price" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="change_fee" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typj(" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpassangers_typj" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="member∈members" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#("/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="change_fee∈ℕ" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#*"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typj)" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typj(" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="balances(member)≥change_fee+commute_price" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPpassangers_typj" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typj)" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="cards_state(member)=active" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#9|org.eventb.core.guard#."/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="ChangeLineSpecialCard/grd3/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typk("/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(balances)∧balances∈PERSON ⇸ ℤ∧2≠0" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#,"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#,"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typk("/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ChangeLineSpecialCard/grd4/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of Guard" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typk)"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(cards_state)∧cards_state∈PERSON ⇸ STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#-"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#-"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typk)"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ChangeLineSpecialCard/act1/WD" org.eventb.core.accurate="false" org.eventb.core.poDesc="Well-definedness of action" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typk"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="member∈dom(balances)∧balances∈PERSON ⇸ ℤ∧2≠0" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.action#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.action#\/"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typk"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="ChangeLineSpecialCard/balances/EQL" org.eventb.core.accurate="false" org.eventb.core.poDesc="Equality of common variables" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTALLHYPpassangers_typk"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="balances{member ↦ balances(member) − commute_price ÷ 2 − change_fee}=balances" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.action#\/"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="CONCRETE" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poSelHintSnd="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poSequent#ChangeLineSpecialCard\/balances\/EQL|org.eventb.core.poPredicateSet#SEQHYP"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="EVTIDENTpassangers_typk" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="58">
+<org.eventb.core.poIdentifier name="member" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="balances'" org.eventb.core.type="ℙ(PERSON×ℤ)"/>
+<org.eventb.core.poIdentifier name="commute_price" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="change_fee" org.eventb.core.type="ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typk(" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTIDENTpassangers_typk" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="member∈members" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#*"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="change_fee∈ℕ" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#+"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTHYPpassangers_typk)" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typk(" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="balances(member)≥change_fee ÷ 2+commute_price" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#,"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPpassangers_typk" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#EVTHYPpassangers_typk)" org.eventb.core.poStamp="61">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="cards_state(member)=active" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.event#:|org.eventb.core.guard#-"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/suica-train/M2.bpo|org.eventb.core.poFile#M2|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="58">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="passangers_type∈members → PERSON" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#4"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="cards_state∈members → STATES" org.eventb.core.source="/suica-train/M2.bum|org.eventb.core.machineFile#M2|org.eventb.core.invariant#8"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

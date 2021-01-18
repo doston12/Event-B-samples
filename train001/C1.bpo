@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="15">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="15">
+<org.eventb.core.poIdentifier name="SUICA_CARD" org.eventb.core.type="ℙ(SUICA_CARD)"/>
+<org.eventb.core.poIdentifier name="PERSON" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="old_citizens" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="kids" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="normal_traveller" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poPredicate name="normal_travelles" org.eventb.core.predicate="finite(SUICA_CARD)" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="normal_travellet" org.eventb.core.predicate="finite(PERSON)" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="normal_travelleu" org.eventb.core.predicate="partition(PERSON,{students},{kids},{old_citizens},{normal_traveller})" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#\/"/>
+<org.eventb.core.poIdentifier name="COMPANIES" org.eventb.core.type="ℙ(COMPANIES)"/>
+<org.eventb.core.poIdentifier name="STATES" org.eventb.core.type="ℙ(STATES)"/>
+<org.eventb.core.poIdentifier name="deactivated" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="change_line_fee" org.eventb.core.type="ℙ(ℤ)"/>
+<org.eventb.core.poIdentifier name="JSR_EAST" org.eventb.core.type="COMPANIES"/>
+<org.eventb.core.poIdentifier name="insufficient" org.eventb.core.type="STATES"/>
+<org.eventb.core.poIdentifier name="PRIVATE_LINE" org.eventb.core.type="COMPANIES"/>
+<org.eventb.core.poIdentifier name="active" org.eventb.core.type="STATES"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/suica-train/C1.bpo|org.eventb.core.poFile#C1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="15">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(STATES,{active},{insufficient},{deactivated})" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#,"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="active≠deactivated" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#3"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(COMPANIES,{JSR_EAST,PRIVATE_LINE})" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#8"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="JSR_EAST≠PRIVATE_LINE" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#9"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="change_line_fee=20 ‥ 100" org.eventb.core.source="/suica-train/C1.buc|org.eventb.core.contextFile#C1|org.eventb.core.axiom#;"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

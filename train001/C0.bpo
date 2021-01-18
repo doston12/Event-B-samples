@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poIdentifier name="SUICA_CARD" org.eventb.core.type="ℙ(SUICA_CARD)"/>
+<org.eventb.core.poIdentifier name="PERSON" org.eventb.core.type="ℙ(PERSON)"/>
+<org.eventb.core.poIdentifier name="old_citizens" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="students" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="kids" org.eventb.core.type="PERSON"/>
+<org.eventb.core.poIdentifier name="normal_traveller" org.eventb.core.type="PERSON"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/suica-train/C0.bpo|org.eventb.core.poFile#C0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="6">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="finite(SUICA_CARD)" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#)"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="finite(PERSON)" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#*"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="partition(PERSON,{students},{kids},{old_citizens},{normal_traveller})" org.eventb.core.source="/suica-train/C0.buc|org.eventb.core.contextFile#C0|org.eventb.core.axiom#\/"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

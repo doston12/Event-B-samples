@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="(" org.eventb.core.assignment="balances ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="members ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="passangers_type ≔ ∅" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="C0"/>
+<org.eventb.core.invariant name="*" org.eventb.core.label="inv1" org.eventb.core.predicate="members ⊆ PERSON"/>
+<org.eventb.core.variable name="+" org.eventb.core.identifier="balances"/>
+<org.eventb.core.invariant name="," org.eventb.core.label="inv2" org.eventb.core.predicate="balances ∈ members →  ℕ"/>
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="NewMember">
+<org.eventb.core.action name="'" org.eventb.core.assignment="members ≔ members ∪ {member}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∉ members "/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="member"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="balances(member) ≔ 0" org.eventb.core.label="act2"/>
+<org.eventb.core.parameter name="+" org.eventb.core.identifier="type"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd2" org.eventb.core.predicate="type ∈ PERSON"/>
+<org.eventb.core.action name="-" org.eventb.core.assignment="passangers_type(member) ≔ type" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="3" org.eventb.core.identifier="passangers_type"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="members"/>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="AddMoney">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="amount"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="member"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="amount ∈ ℕ1 "/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="balances(member) ≔ balances(member) + amount" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="member ∈ members"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeductCommuteAmountAdult">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="member"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="commutePrice"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="commutePrice ∈ ℕ1 "/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="passangers_type(member) = normal_traveller"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="balances(member) ≥ commutePrice"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="balances(member) ≔ balances(member) − commutePrice" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="1" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="DeductCommuteAmountSpecialCard">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="member"/>
+<org.eventb.core.parameter name="-" org.eventb.core.identifier="passanger_type"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="commute_price"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="commute_price ∈ ℕ1"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd3" org.eventb.core.predicate="balances(member) ≥ commute_price÷2"/>
+<org.eventb.core.action name="," org.eventb.core.assignment="balances(member) ≔ balances(member) − commute_price÷2" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="passanger_type ∈ {kids, old_citizens, students}"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="4" org.eventb.core.label="inv3" org.eventb.core.predicate="passangers_type ∈ members → PERSON"/>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ChangeLineAdult">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="member"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="change_fee"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="commute_price"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="change_fee ∈ ℕ"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="balances(member) ≥ change_fee + commute_price"/>
+<org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="passangers_type(member) = normal_traveller"/>
+<org.eventb.core.action name="/" org.eventb.core.assignment="balances(member) ≔ balances(member) − commute_price − change_fee" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="ChangeLineSpecialCard">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="member"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="change_fee"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="commute_price"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.guard name="+" org.eventb.core.label="grd2" org.eventb.core.predicate="change_fee ∈ ℕ"/>
+<org.eventb.core.guard name="," org.eventb.core.label="grd3" org.eventb.core.predicate="balances(member) − (change_fee + commute_price÷2) ∈ ℕ"/>
+<org.eventb.core.guard name="-" org.eventb.core.label="grd4" org.eventb.core.predicate="passangers_type(member) ∈ {kids, students, old_citizens}"/>
+<org.eventb.core.action name="." org.eventb.core.assignment="balances(member) ≔ balances(member) − commute_price÷2 − change_fee" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="M1"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="C1"/>
+<org.eventb.core.variable name="+" org.eventb.core.identifier="balances"/>
+<org.eventb.core.variable name="3" org.eventb.core.identifier="passangers_type"/>
+<org.eventb.core.variable name="." org.eventb.core.identifier="members"/>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="(" org.eventb.core.assignment="balances ≔ ∅" org.eventb.core.label="act2"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="members ≔ ∅" org.eventb.core.label="act3"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="passangers_type ≔ ∅" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="cards_state ≔ ∅" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="NewMember">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="NewMember"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="cards_state(member) ≔ active" org.eventb.core.label="act4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="AddMoney">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="AddMoney"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd3" org.eventb.core.predicate="cards_state(member) = active"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeductCommuteAmountAdult">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeductCommuteAmountAdult"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="cards_state(member) = active"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="DeductCommuteAmountSpecialCard">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="DeductCommuteAmountSpecialCard"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="cards_state(member) = active"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChangeLineAdult">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChangeLineAdult"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="cards_state(member) = active"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ChangeLineSpecialCard">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="ChangeLineSpecialCard"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="cards_state(member) = active"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name=";" org.eventb.core.identifier="cards_state"/>
+<org.eventb.core.invariant name="=" org.eventb.core.label="inv1" org.eventb.core.predicate="cards_state ∈ members → STATES"/>
+<org.eventb.core.event name="&gt;" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="changeCardState">
+<org.eventb.core.parameter name="'" org.eventb.core.identifier="new_card_state"/>
+<org.eventb.core.parameter name="(" org.eventb.core.identifier="member"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="member ∈ members"/>
+<org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="new_card_state ∈ STATES"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="cards_state(member) ≔ new_card_state" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>
